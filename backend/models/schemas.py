@@ -1,9 +1,9 @@
 from pydantic import BaseModel
-
+from typing import List
 print('schema is loaded')
 class SymptomInput(BaseModel):
-    symptom: str
+    symptom: List[str] # this will take multiple input (multiple symptoms)
 
 class RecommendationOutput(BaseModel):
-    matched_symptom: str
+    matched_symptom: List[str] 
     recommend_treatment: str
