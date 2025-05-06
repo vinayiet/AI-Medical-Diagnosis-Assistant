@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 # arr = [43, 20, 35, 25, 15]
 
 # # selection sort
@@ -175,15 +177,58 @@
 #     seen.add(arr[i])
 
 
-s1 = 'nagaram'
-s2 = 'anagram'
+# s1 = 'nagaram'
+# s2 = 'anagram'
 
-dic = {chr(i): 0 for i in range(ord('a'), ord('z') + 1)}
-for c in s1:
-    dic[c] += 1
-for d in s2:
-    dic[d] -= 1
-if any(value > 0 for value in dic.values()):
-    print("False")
-else:
-    print("True")
+# dic = {chr(i): 0 for i in range(ord('a'), ord('z') + 1)}
+# for c in s1:
+#     dic[c] += 1
+# for d in s2:
+#     dic[d] -= 1
+# if any(value > 0 for value in dic.values()):
+#     print("False")
+# else:
+#     print("True")
+
+# dic = {chr(i): 0 for i in range(ord('a'), ord('z') + 1)}
+# strs = ["eat","tea","tan","ate","nat","bat"]
+
+# anagrams = defaultdict(list)
+# for word in strs:
+#     sorted_word = ''.join(sorted(word))
+#     anagrams[sorted_word].append(word)
+# print(list(anagrams.values()))
+
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, item):
+        self.stack.append(item)
+
+    def pop(self):
+        if not self.is_empty():
+            return self.stack.pop()
+        else:
+            raise IndexError("Pop from an empty stack")
+
+    def peek(self):
+        if not self.is_empty():
+            return self.stack[-1]
+        else:
+            raise IndexError("Peek from an empty stack")
+
+    def is_empty(self):
+        return len(self.stack) == 0
+
+    def size(self):
+        return len(self.stack)
+
+# Example usage:
+stack = Stack()
+stack.push(10)
+stack.push(20)
+stack.push(30)
+print(stack.pop())  # Output: 30
+print(stack.peek())  # Output: 20
+print(stack.is_empty())  # Output: False
