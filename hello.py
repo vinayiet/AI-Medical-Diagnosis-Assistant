@@ -199,36 +199,77 @@ from collections import defaultdict
 #     anagrams[sorted_word].append(word)
 # print(list(anagrams.values()))
 
-class Stack:
-    def __init__(self):
-        self.stack = []
+# class Stack:
+#     def __init__(self):
+#         self.stack = []
 
-    def push(self, item):
-        self.stack.append(item)
+#     def push(self, item):
+#         self.stack.append(item)
 
-    def pop(self):
-        if not self.is_empty():
-            return self.stack.pop()
-        else:
-            raise IndexError("Pop from an empty stack")
+#     def pop(self):
+#         if not self.is_empty():
+#             return self.stack.pop()
+#         else:
+#             raise IndexError("Pop from an empty stack")
 
-    def peek(self):
-        if not self.is_empty():
-            return self.stack[-1]
-        else:
-            raise IndexError("Peek from an empty stack")
+#     def peek(self):
+#         if not self.is_empty():
+#             return self.stack[-1]
+#         else:
+#             raise IndexError("Peek from an empty stack")
 
-    def is_empty(self):
-        return len(self.stack) == 0
+#     def is_empty(self):
+#         return len(self.stack) == 0
 
-    def size(self):
-        return len(self.stack)
+#     def size(self):
+#         return len(self.stack)
 
-# Example usage:
-stack = Stack()
-stack.push(10)
-stack.push(20)
-stack.push(30)
-print(stack.pop())  # Output: 30
-print(stack.peek())  # Output: 20
-print(stack.is_empty())  # Output: False
+# # Example usage:
+# stack = Stack()
+# stack.push(10)
+# stack.push(20)
+# stack.push(30)
+# print(stack.pop())  # Output: 30
+# print(stack.peek())  # Output: 20
+# print(stack.is_empty())  # Output: False
+
+
+# Top frequent k elements 
+# arr = [1,2,1,2,1,3]
+
+# hash = {}
+# for num in arr:
+#     if num in hash:
+#         hash[num] += 1
+#     else:
+#         hash[num] = 1
+
+# sorted_arr =sorted(hash,key = lambda x:hash[x], reverse=True)
+# k = 1
+# print(arr[:2])
+
+# arr = [1,2,3,4]
+# # pre product -> [1] 
+# pre = [1] * len(arr)
+# left_prod = 1
+# for i in range(len(arr)):
+#     pre[i] = left_prod
+#     left_prod = left_prod * arr[i]
+# print(f'This is the pre product', pre)
+
+# post = [1] * len(arr)
+# right_prod = 1
+# for i in range(len(arr) - 1, -1, -1):
+#     post[i] = right_prod
+#     right_prod = right_prod * arr[i]
+
+# print(f'This is the right product:', post)
+
+# for i in range(len(pre)):
+#     arr[i] = pre[i] * post[i]
+
+# print(arr)
+
+# [1,2,3,4]
+# 24, 12, 8, 6
+
